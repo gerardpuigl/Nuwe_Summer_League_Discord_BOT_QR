@@ -1,0 +1,1 @@
+java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/Discord_Bot_QR-1.0.0.jar

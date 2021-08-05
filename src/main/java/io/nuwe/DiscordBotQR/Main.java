@@ -21,16 +21,20 @@ public class Main {
      * @param args The arguments for the program. The first element should be the bot's token.
      */
     public static void main(String[] args) {
-        if (args.length < 1) {
-            logger.error("Please provide a valid token as the first argument!");
-            return;
-        }
-
+    	String token;
+    	try {
+            token = args[0];
+		} catch (ArrayIndexOutOfBoundsException e) {
+			token = System.getenv("DICORD_TOKEN");
+			if(token == null) logger.error("Please provide a valid token as the first argument!");
+			return;
+		} 
+    	
         // Enable debugging, if no slf4j logger was found
         FallbackLoggerConfiguration.setDebug(true);
 
         // The token from your discord bot
-        String token = args[0];
+
         DiscordApi api = new DiscordApiBuilder().setToken(token).login().join();
 
         // Generatd commands when the bood enter in a server
