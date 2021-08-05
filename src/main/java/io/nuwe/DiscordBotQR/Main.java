@@ -9,6 +9,7 @@ import org.javacord.api.util.logging.FallbackLoggerConfiguration;
 import io.nuwe.DiscordBotQR.command.CreateCommands;
 import io.nuwe.DiscordBotQR.command.QrCommandInteractor;
 import io.nuwe.DiscordBotQR.command.QrCommandMessage;
+import io.nuwe.DiscordBotQR.command.TestInteractor;
 
 public class Main {
 
@@ -28,24 +29,24 @@ public class Main {
         // Enable debugging, if no slf4j logger was found
         FallbackLoggerConfiguration.setDebug(true);
 
-        // The token is the first argument of the program
+        // The token from your discord bot
         String token = args[0];
-
-        // We login blocking, just because it is simpler and doesn't matter here
         DiscordApi api = new DiscordApiBuilder().setToken(token).login().join();
 
-        // Print the invite url of the bot
-        logger.info("You can invite me by using the following url: " + api.createBotInvite());
+        // Generatd commands when the bood enter in a server
+        api.addServerJoinListener( new CreateCommands(api));
 
         // Add listeners
         api.addMessageCreateListener(new QrCommandMessage());
+        api.addSlashCommandCreateListener(new TestInteractor());
         api.addSlashCommandCreateListener(new QrCommandInteractor());
 
         // Log a message, if the bot joined or left a server
         api.addServerJoinListener(event -> logger.info("Joined server " + event.getServer().getName()));
         api.addServerLeaveListener(event -> logger.info("Left server " + event.getServer().getName()));
-        api.addServerJoinListener( new CreateCommands(api));
-    
+
+        // Print the invite url of the bot
+        logger.info("You can invite me by using the following url: " + api.createBotInvite());       
     }
 
 }
