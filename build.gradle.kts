@@ -26,5 +26,6 @@ dependencies {
 }
 
 application {
-    mainClass.set("org.javacord.examplebot.Main")
+    mainClass.set("io.nuwe.DiscordBotQR.Main")
 }
+
