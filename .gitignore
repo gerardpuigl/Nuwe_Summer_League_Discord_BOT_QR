@@ -1,0 +1,19 @@
+# volatile Gradle files
+/.gradle/
+/build/
+
+# Eclipse project files
+/.classpath
+/.project
+/.settings/
+/bin/
+
+# IntelliJ IDEA project files
+/.idea/
+/*/out/
+*.iml
+*.ipr
+*.iws
+
+# ignore the log from running the bot
+/log/

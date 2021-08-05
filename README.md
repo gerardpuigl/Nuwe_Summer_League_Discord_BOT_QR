@@ -1,1 +1,0 @@
-# Nuwe_Summer_League_Discord_BOT_QR
