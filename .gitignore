@@ -1,33 +1,19 @@
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# volatile Gradle files
+/.gradle/
+/build/
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+# Eclipse project files
+/.classpath
+/.project
+/.settings/
+/bin/
 
-### IntelliJ IDEA ###
-.idea
-*.iws
+# IntelliJ IDEA project files
+/.idea/
+/*/out/
 *.iml
 *.ipr
+*.iws
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
-.vscode/
+# ignore the log from running the bot
+/log/

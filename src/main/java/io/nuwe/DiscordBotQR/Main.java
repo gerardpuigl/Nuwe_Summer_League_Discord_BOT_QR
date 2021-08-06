@@ -21,16 +21,20 @@ public class Main {
      * @param args The arguments for the program. The first element should be the bot's token.
      */
     public static void main(String[] args) {
+    	
+    	// Get Discord Token from arguments when Jar is started or from Heroku
     	String token;
     	try {
             token = args[0];
 		} catch (ArrayIndexOutOfBoundsException e) {
-			token = System.getenv("TOKEN");
-			if(token == null) {logger.error("Please provide a valid token as the first argument!");
-			System.out.println("Please provide a valid token as the first argument!");
-			return;
-			}
+			token = System.getenv().get("TOKEN");
 		} 
+   
+		if(token == null) {
+			logger.error("Please provide a valid token as the first argument!");
+			System.out.println("Please provide a valid token as the first argument!");
+		return;
+		}
     	
         // Enable debugging, if no slf4j logger was found
         FallbackLoggerConfiguration.setDebug(true);
@@ -39,7 +43,7 @@ public class Main {
 
         DiscordApi api = new DiscordApiBuilder().setToken(token).login().join();
 
-        // Generatd commands when the bood enter in a server
+        // Generatd commands when the bot is added to a server
         api.addServerJoinListener( new CreateCommands(api));
 
         // Add listeners
@@ -51,8 +55,8 @@ public class Main {
         api.addServerJoinListener(event -> logger.info("Joined server " + event.getServer().getName()));
         api.addServerLeaveListener(event -> logger.info("Left server " + event.getServer().getName()));
 
-        // Print the invite url of the bot
-        logger.info("You can invite me by using the following url: " + api.createBotInvite());       
+        // Print start 
+        logger.info("Boot aplication succeeded.");       
     }
 
 }
