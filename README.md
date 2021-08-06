@@ -29,7 +29,7 @@ You can install my bot in your server just with this **link**:  [Add QR_Genereto
 
 In terminal / cmd, open the application folder and run the jar + <your_dicord_bot_token>
 
-**Important:** Your Discord bot should have allowed bot permissions, applications.commands & Sende Messages to work properly.
+**Important:** Your Discord bot should have allowed bot permissions, applications.commands & Send Messages.
 
 Example `java -jar discord_bot_qr-1.1.jar + <your_dicord_bot_token>`
 
