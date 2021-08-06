@@ -26,7 +26,8 @@ public class Main {
             token = args[0];
 		} catch (ArrayIndexOutOfBoundsException e) {
 			token = System.getenv().get("DICORD_TOKEN");
-			if(token == null) logger.error("Please provide a valid token as the first argument!");
+			if(token == null) {logger.error("Please provide a valid token as the first argument!");
+			System.out.println("Please provide a valid token as the first argument!");}
 			return;
 		} 
     	
