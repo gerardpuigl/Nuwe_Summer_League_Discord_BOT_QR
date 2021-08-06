@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'com.github.johnrengelman.shadow' version '6.1.0'
 }
 
 group 'io.nuwe.DiscordBotQR'
@@ -31,5 +30,8 @@ build.mustRunAfter test
 jar {
     manifest{
         attributes 'Class-Path': '/libs/discord_bot_qr-1.1.jar', 'Main-Class': 'io.nuwe.DiscordBotQR.Main'
+    }
+        from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
