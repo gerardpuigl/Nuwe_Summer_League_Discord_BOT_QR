@@ -1,5 +1,5 @@
 # Discord Bot QR Nuwe Summer League Backend
-Discord Bot that generates an embedded Discord card with a QR code from a custom URL. As optional, you can choose the color and description of this card.
+Discord Bot that generates an embedded Discord card with a QR code from a custom URL. As optional, you can choose the color and description for this card.
 
 <p align="center">
   <img src="https://github.com/gerardpuigl/Nuwe_Summer_League_Discord_BOT_QR/blob/main/screenshot/QR_Generator_ScreenShot_1.jpg" alt="Discord_Bot_Qr" title="Discord_Bot_Qr" width="350px"/>
@@ -39,7 +39,7 @@ You can use this commands in inbox chat inside the server or with a MD conversat
 
 ### Generate QR
 
-Generate embed Dicord card with a custom url. As options, you can choose the color and the description of this card.
+Generates an embedded Discord card with a QR code from a custom URL. As optional, you can choose the color and description for this card.
 
 `/qr url:<your_custom_url> OPTIONAL color:<choose_a_color> description:<your_custom_description>`
 
